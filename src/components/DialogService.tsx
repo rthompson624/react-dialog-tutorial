@@ -7,7 +7,7 @@ export interface IDialogServiceProps {
   children: JSX.Element;
 }
 
-export default function DialogService (props: IDialogServiceProps) {
+export function DialogService (props: IDialogServiceProps) {
   const containerClassName = props.show ?
     "fixed top-0 left-0 w-full h-full bg-gray-300 bg-opacity-70 flex justify-center items-center"
     : "fixed top-0 left-0 w-full h-full bg-gray-300 bg-opacity-70 hidden"

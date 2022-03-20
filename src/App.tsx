@@ -1,16 +1,19 @@
 import { useState } from "react";
-import Navbar from "./components/Navbar";
-import DialogService from "./components/DialogService";
+import { Navbar } from "./components/Navbar";
+import { SettingsDialog, ISettingsDialogOutput } from "./components/SettingsDialog";
 
 function App() {
-  const [showSettings, setShowSettings] = useState<boolean>(false);
+  const [userId, setUserId] = useState<number>(1);
+  const [showSettingsDialog, setShowSettingsDialog] = useState<boolean>(false);
 
   function handleSettingsClick(): void {
-    setShowSettings(true);
+    setShowSettingsDialog(true);
   }
 
-  function handleDialogClose(): void {
-    setShowSettings(false);
+  function handleSettingsDialogClose(response: ISettingsDialogOutput | null): void {
+    if (response) {
+      console.log(response);
+    }
   }
 
   return (
@@ -19,9 +22,7 @@ function App() {
       <div className="flex flex-row justify-center items-center h-80">
         <div className="border-2 p-20">Main Content</div>
       </div>
-      <DialogService show={ showSettings } title="Settings" onClose={ () => handleDialogClose() }>
-        <div>Dialog content</div>
-      </DialogService>
+      <SettingsDialog input={ { userId } } show={ showSettingsDialog } setShow={ setShowSettingsDialog } onClose={ (response) => handleSettingsDialogClose(response) }></SettingsDialog>
     </div>
   );
 }

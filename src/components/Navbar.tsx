@@ -4,7 +4,7 @@ export interface INavbarProps {
   onSettingsClick: () => void;
 }
 
-export default function Navbar (props: INavbarProps) {
+export function Navbar (props: INavbarProps) {
   return (
     <div className="flex flex-row justify-between	border-b-2 sticky top-1 bg-white text-center py-2">
       <div className="w-10"></div>
