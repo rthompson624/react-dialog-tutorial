@@ -1,7 +1,7 @@
-import { IoMdSettings } from "react-icons/io";
+import { IoIosLogIn } from "react-icons/io";
 
 export interface INavbarProps {
-  onSettingsClick: () => void;
+  onLoginClick: () => void;
 }
 
 export function Navbar (props: INavbarProps) {
@@ -10,7 +10,7 @@ export function Navbar (props: INavbarProps) {
       <div className="w-10"></div>
       <div className="text-2xl font-bold">Navbar Title</div>
       <div className="w-10 pr-3">
-        <IoMdSettings onClick={ () => props.onSettingsClick() } className='text-3xl cursor-pointer' />
+        <IoIosLogIn onClick={ () => props.onLoginClick() } className='text-3xl cursor-pointer' />
       </div>
     </div>
   );
